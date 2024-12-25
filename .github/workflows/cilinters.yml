@@ -1,12 +1,12 @@
-name: ci
+name: cilinters
 
 on:
   pull_request:
     branches: [main]
 
 jobs:
-  tests:
-    name: Tests
+  Style:
+    name: Style
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Run tests
-        run: npm run test -- --coverage
 
       - name: Run linter
         run: npm run format:check

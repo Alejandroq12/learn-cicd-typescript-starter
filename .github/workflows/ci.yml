@@ -43,8 +43,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run formatter
+      - name: Check format
         run: npm run format:check
 
-      - name: Run linter
-        run: npm run lint
+      - name: Check linting
+        run: npm run lint -- --max-warnings=0
